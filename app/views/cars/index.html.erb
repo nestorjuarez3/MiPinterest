@@ -5,8 +5,9 @@
       <% @cars.each do |car| %>
         <div class="col-md-3">
           <div class="thumbnail">
-            <%= car.model %>
+            <%= car.name %>
             <%= image_tag(car.photo, :class => 'img-responsive') %>
+            <%= car.model %>
             <div class="button" style="margin-top:10px; margin-bottom:10px">
               <%= link_to 'Show', car, :class => 'btn' %>
               <%= link_to 'Edit', edit_car_path(car), :class => 'btn' %>

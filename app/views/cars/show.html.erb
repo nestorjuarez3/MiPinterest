@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>Nombre:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
   <%= image_tag(@car.photo, :style => 'width:500px') %>
 </p>
 
 <p>
-  <strong>Model:</strong>
+  <strong>Modelo:</strong>
   <%= @car.model %>
 </p>
 
