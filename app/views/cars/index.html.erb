@@ -2,27 +2,19 @@
 <div class="container">
   <h1>Cars</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Photo</th>
-        <th>Model</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
       <% @cars.each do |car| %>
-        <tr>
-          <td><%= image_tag(car.photo, :style => 'width:300px') %></td>
-          <td><%= car.model %></td>
-          <td><%= link_to 'Show', car %></td>
-          <td><%= link_to 'Edit', edit_car_path(car) %></td>
-          <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <%= car.model %>
+            <%= image_tag(car.photo, :class => 'img-responsive') %>
+            <div class="button" style="margin-top:10px; margin-bottom:10px">
+              <%= link_to 'Show', car, :class => 'btn' %>
+              <%= link_to 'Edit', edit_car_path(car), :class => 'btn' %>
+              <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
 
   <br>
 
