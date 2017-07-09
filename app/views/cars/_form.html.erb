@@ -13,26 +13,26 @@
 
 <div class="form-group">
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :car_name, :class => 'form-control' %>
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :car_name, :class => 'form-control', :placeholder => "Nombre del Auto" %>
   </div>
 </div>
 
 <div class="form-group">
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :car_photo, :class => 'form-control' %>
+    <%= form.label :photo, "Foto" %>
+    <%= form.text_field :photo, id: :car_photo, :class => 'form-control', :placeholder => "Url de la foto" %>
   </div>
 </div>
 
 <div class="form-group">
   <div class="field">
-    <%= form.label :model %>
+    <%= form.label :model, "Modelo" %>
     <%= form.text_field :model, id: :car_model, :class => 'form-control' %>
   </div>
 </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear", :class => "btn btn-primary" %>
   </div>
 <% end %>
