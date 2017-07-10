@@ -1,5 +1,16 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [ :index, :show ]
+
+  def carsof
+    @user_id = params[:user_id]
+    @user = User.find(@user_id)
+    @cars = @user.cars
+  end
+
+  def mycars
+    @cars = current_user.cars
+  end
 
   # GET /cars
   # GET /cars.json
